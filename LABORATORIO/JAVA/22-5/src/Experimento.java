@@ -2,16 +2,10 @@ import java.util.ArrayList;
 
 public class Experimento {
 
-    ArrayList<Observacion> observaciones = new ArrayList<Observacion>();
-    /*boolean avanzado;
-    boolean consistente;*/
-    private int id = 0;
+    ArrayList<Observacion> observaciones;
 
-    public Experimento(int i){
-        id = i;
-    }
     public Experimento(){
-
+        observaciones = new ArrayList<Observacion>();
     }
 
     public void addObservacion(Observacion o1){
@@ -69,7 +63,6 @@ public class Experimento {
             }
         }
         cant = cant/2;
-        System.out.println(cant + " " + cantl);
         if(cantl>cant){
             return true;
         }
