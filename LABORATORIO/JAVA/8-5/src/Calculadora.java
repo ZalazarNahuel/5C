@@ -40,14 +40,20 @@ public class Calculadora {
         }
         return memoriaInt.get(pos);
     }
+    public Programa getPrograma(){
+        return this.programa;
+    }
+    public ArrayList<Rutina> getRutinasPrograma(){
+        return this.getPrograma().getRutinas();
+    }
 
     public void cargarPrograma(Programa p1){
         this.programa = p1;
     }
 
     public void ejecutar(String nombreRutina){
-        for(int i=0;i<this.programa.rutinas.size();i++){
-            Rutina r1 = this.programa.rutinas.get(i);
+        for(int i=0;i<this.getRutinasPrograma().size();i++){
+            Rutina r1 = this.getRutinasPrograma().get(i);
             if(nombreRutina==r1.getNombre()){
                for(int j=0;j<r1.getSizeInstrucciones();j++){
                    Instruccion i1= r1.getInstrucciones(j);
