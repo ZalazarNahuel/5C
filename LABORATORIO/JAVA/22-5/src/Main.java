@@ -5,49 +5,58 @@ public class Main {
 
 
         Sistema s1 = new Sistema();
-        s1.addLab(new Laboratorio());
-       
-        String resultado = "";
-        Scanner r1 = new Scanner(System.in);
-
-
+        Laboratorio l1 = new Laboratorio();
+        s1.addLab(l1);
         System.out.println("¿Quiere empezar un nuevo experimento?(y/n)");
-        while(resultado.equalsIgnoreCase("y")==false && resultado.equalsIgnoreCase("n")==false) resultado = r1.next();
-
-        
-        if(resultado.equalsIgnoreCase("y")){
-            Experimento e1 = new Experimento();
+        String resultado;
+        Scanner r1 = new Scanner(System.in);
+        resultado = r1.next();
+        Experimento e1 = new Experimento(0);
+        System.out.println("¿Cuantas observaciones tiene?");
+        int resul;
+        resul = r1.nextInt();
+        ArrayList<Observacion> obs = new ArrayList<Observacion>();
+        for(int i=0;i<resul;i++){
+            System.out.println("Como es su resultado?(a/l+/l-)");
+            String resultado2 = r1.next();
+            obs.add(new Observacion());
+            if(resultado2.equals("a")){
+                obs.get(i).setResultado("ANOMALA");
+                e1.addObservacion(obs.get(i));
+            }
+            else if(resultado2.equals("l+")){
+                obs.get(i).setResultado("LEGITIMA QUE CONFIRMA LA HIPOTESIS");
+                e1.addObservacion(obs.get(i));
+            }
+            else if(resultado2.equals("l-")){
+                obs.get(i).setResultado("LEGITIMA QUE CONTRADICE LA HIPOTESIS");
+                e1.addObservacion(obs.get(i));
+            }
+        }
+        for(int i=0;i<resul;i++){
+            System.out.println(e1.observaciones.get(i).getResultado());
+        }
+        if(resultado.equals("y")){
             if(s1.addExperimento(e1)==true){
                 System.out.println("Se econtro un laboratorio para el experimento");
-                System.out.println("¿Cuantas observaciones tiene?");
-                int resul;
-                resul = r1.nextInt();
-                ArrayList<Observacion> obs = new ArrayList<Observacion>();
-                for(int i=0;i<resul;i++){
-                    System.out.println("Como es su resultado?(a/l+/l-)");
-                        resultado = r1.next();
-                    obs.add(new Observacion());
-                    if(resultado.equals("a")){
-                        obs.get(i).setResultado("ANOMALA");
-                        e1.addObservacion(obs.get(i));
+                boolean r;
+                int cantCons=0;
+                for(int i = 0 ;i < s1.cantLab();i++){
+                    r = s1.getLab(i).getExperimento().anomala();
+                    if(r){
+                        System.out.println("Se encontro que el experimento " + s1.getLab(i).getExperimento()+" es anomala por lo que sera eliminada");
+                        s1.getLab(i).removeExperimento();
                     }
-                    else if(resultado.equals("l+")){
-                        obs.get(i).setResultado("LEGITIMA QUE CONFIRMA LA HIPOTESIS");
-                        e1.addObservacion(obs.get(i));
-                    }
-                    else if(resultado.equals("l-")){
-                        obs.get(i).setResultado("LEGITIMA QUE CONTRADICE LA HIPOTESIS");
-                        e1.addObservacion(obs.get(i));
+                    r = s1.getLab(i).getExperimento().consistente();
+                    if(r){
+                        cantCons++;
                     }
                 }
-                s1.buscarAnomalias();
-                s1.cantExperimentosConsistentes();
-                s1.cantExperimentosAvanzadosConsistentes();
-                
+                System.out.println("Hay " + cantCons + " experimentos consistentes");
             }
             else{
-                System.out.println("Disculpe las molestias no contamos con un laboratorio disponible");
-            }             
+                System.out.println("No se econtro un laboratorio para el experimento");
+            }
         }
         else{
             System.out.println("Chau!");

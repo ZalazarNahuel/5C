@@ -1,20 +1,19 @@
 public class Laboratorio {
 
 
-    private Experimento experimento ;
+
+
+    private Experimento experimento = new Experimento();
     private boolean vacio;
 
     public Laboratorio(){
         this.vacio=true;
-        experimento = new Experimento();
     }
 
-    public void setVacio(boolean estado){
-        this.vacio = estado;
-    }
+
     public void addExperimento(Experimento e1){
         this.experimento = e1;
-        this.setVacio(false);;
+        vacio=false;
     }
 
     public boolean getVacio(){
@@ -24,7 +23,7 @@ public class Laboratorio {
         return experimento;
     }
     public void removeExperimento(){
-        this.setVacio(true);;
+        vacio = true;
         Experimento e1 = new Experimento();
         experimento = e1;
     }
