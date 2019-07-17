@@ -4,12 +4,15 @@ import java.util.Stack;
 public class Calculadora {
 
     private Programa programa;
-    private Stack<Integer> pila = new Stack<Integer>();
-    private ArrayList<Integer> memoriaInt = new ArrayList<Integer>();
-    private ArrayList<String> memoriaString = new ArrayList<String>();
+    private Stack<Integer> pila ;
+    private ArrayList<Integer> memoriaInt ;
+    private ArrayList<String> memoriaString ;
 
     public Calculadora(){
-
+        programa = new Programa();
+        pila = new Stack<Integer>();
+        memoriaInt = new ArrayList<Integer>();
+        memoriaString = new ArrayList<String>();
     }
 
     public void addMemoria(String nombre, int valor){
@@ -55,65 +58,90 @@ public class Calculadora {
         return this.getRutinasPrograma().get(i);
     }
 
+    public void push(Instruccion i1){
+        pila.push(i1.getValor());
+    }
+    public void add(){
+        if(pila.empty()==true){
+            pila.push(0);
+        }
+        else if(pila.size()>1){
+            int num= pila.pop() + pila.pop();
+            pila.push(num);
+        }
+    }
+    public void sub(){
+        if(pila.empty()==true){
+            pila.push(0);
+        }
+        else if(pila.size()>1){
+            int num1 = pila.pop();
+            int num2 = pila.pop();
+            pila.push(num2-num1);
+        }
+    }
+
+    public void mul(){
+        if(pila.empty()==true){
+            pila.push(0);
+        }
+        else if(pila.size()>1){
+            int num= pila.pop() * pila.pop();
+            pila.push(num);
+        }
+    }
+
+    public void write(Instruccion i1){
+        if(pila.empty()==true){
+            memoriaInt.set(memoriaString.indexOf(i1.getVariable()),0);
+        }
+        else{
+            memoriaInt.set(memoriaString.indexOf(i1.getVariable()),pila.pop());
+        }
+    }
+
+    public void read(Instruccion i1){
+        if(memoriaString.contains(i1.getVariable())==false){
+            pila.push(0);
+        }
+        else{
+            pila.push(memoriaInt.get(memoriaString.indexOf(i1.getVariable())));
+        }
+    }
+
+    public void ejecutarInstruccion(Instruccion i1){
+        switch (i1.getNombreInstruccion()){
+            case "PUSH":
+                this.push(i1);
+                break;
+            case "ADD":
+                this.add();
+                break;
+            case"SUB":
+                this.sub();
+                break;
+            case"MUL":
+                this.mul();
+                break;
+            case"WRITE":
+                this.write(i1);
+                break;
+            case"READ":
+                this.read(i1);
+                break;
+        }
+    }
+
     public void ejecutarRutina(Rutina r1){
-        for(int j=0;j<r1.getSizeInstrucciones();j++){
-            Instruccion i1= r1.getInstrucciones(j);
-            switch (i1.getNombreInstruccion()){
-                case "PUSH":
-                    pila.push(i1.getValor());
-                    break;
-                case "ADD":
-                    if(pila.empty()==true){
-                        pila.push(0);
-                    }
-                    else if(pila.size()>1){
-                        int num= pila.pop() + pila.pop();
-                        pila.push(num);
-                    }
-                    break;
-                case"SUB":
-                    if(pila.empty()==true){
-                        pila.push(0);
-                    }
-                    else if(pila.size()>1){
-                        int num1 = pila.pop();
-                        int num2 = pila.pop();
-                        pila.push(num2-num1);
-                    }
-                    break;
-                case"MUL":
-                    if(pila.empty()==true){
-                        pila.push(0);
-                    }
-                    else if(pila.size()>1){
-                        int num= pila.pop() * pila.pop();
-                        pila.push(num);
-                    }
-                    break;
-                case"WRITE":
-                    if(pila.empty()==true){
-                        memoriaInt.set(memoriaString.indexOf(i1.getVariable()),0);
-                    }
-                    else{
-                        memoriaInt.set(memoriaString.indexOf(i1.getVariable()),pila.pop());
-                    }
-                    break;
-                case"READ":
-                    if(memoriaString.contains(i1.getVariable())==false){
-                        pila.push(0);
-                    }
-                    else{
-                        pila.push(memoriaInt.get(memoriaString.indexOf(i1.getVariable())));
-                    }
-                    break;
-            }
+        for(int i=0;i<r1.getSizeInstrucciones();i++){
+            ejecutarInstruccion(r1.getInstrucciones(i));
         }
     }
 
     public void ejecutar(String nombreRutina){
         for(int i=0;i<this.getRutinasPrograma().size();i++){
             if(nombreRutina==this.getRutinaPrograma(i).getNombre()){
-
+                this.ejecutarRutina(this.getRutinaPrograma(i));
             }
         }
     }

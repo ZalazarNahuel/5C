@@ -5,7 +5,7 @@ public class TelevisionCurvo extends Television{
         curvo = curvox;
     }
     public TelevisionCurvo(){
-
+        this(2);
     }
     public TelevisionCurvo(int curvox, double preciox){
         this(curvox);

@@ -4,12 +4,15 @@ import java.util.Stack;
 public class Calculadora {
 
     private Programa programa;
-    private Stack<Integer> pila = new Stack<Integer>();
-    private ArrayList<Integer> memoriaInt = new ArrayList<Integer>();
-    private ArrayList<String> memoriaString = new ArrayList<String>();
+    private Stack<Integer> pila ;
+    private ArrayList<Integer> memoriaInt ;
+    private ArrayList<String> memoriaString ;
 
     public Calculadora(){
-
+        programa = new Programa();
+        pila = new Stack<>();
+        memoriaInt = new ArrayList<Integer>();
+        memoriaString = new ArrayList<String>();
     }
 
     public void addMemoria(String nombre, int valor){

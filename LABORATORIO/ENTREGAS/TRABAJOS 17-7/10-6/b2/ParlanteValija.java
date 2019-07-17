@@ -13,6 +13,6 @@ public class ParlanteValija extends Parlante{
         this.cantRuedas= cantRuedasx;
     }
     public ParlanteValija(){
-        
+        this("Sony",23);
     }
 }
