@@ -2,7 +2,7 @@ public class Moderado extends Empleado {
     private int cantLugaresLibres;
 
     public Moderado(String nombrex, String tipox, int cantLugaresLibresx){
-        super(nombrex,tipox);
+        super(nombrex);
         this.cantLugaresLibres = cantLugaresLibresx;
     }
 
