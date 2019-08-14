@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e5d89ac-6588-4065-be62-20ab8406df55" name="Default Changelist" comment="" />
+    <list default="true" id="57369916-165f-406c-ac81-e5506f1406be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../5-8 repaso/Reservas Aereas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../5-8 repaso/Reservas Aereas/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="372" />
@@ -23,23 +25,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Reservas Aereas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reservas Aereas" type="462c0819:PsiDirectoryNode" />
+              <item name="ejercicios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ejercicios" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -55,11 +54,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3e5d89ac-6588-4065-be62-20ab8406df55" name="Default Changelist" comment="" />
-      <created>1565642395293</created>
+      <changelist id="57369916-165f-406c-ac81-e5506f1406be" name="Default Changelist" comment="" />
+      <created>1565782139840</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1565642395293</updated>
+      <updated>1565782139840</updated>
     </task>
     <servers />
   </component>

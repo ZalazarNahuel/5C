@@ -1,3 +1,5 @@
+package microsEnum;
+
 import java.util.ArrayList;
 
 public class Micro {
@@ -8,12 +10,11 @@ public class Micro {
     private Empleado primero;
 
     public Micro(int limParado, int limSentado, int volumenx){
-        this.limiteParados = limParado;
-        this.limiteSentados = limSentado;
+        this.disponibleParado = limParado;
+        this.disponibleSentado = limSentado;
         this.volumen = volumenx;
-        this.pasajerosParados = new ArrayList<Empleado>();
-        this.pasajerosSentados = new ArrayList<Empleado>();
-        this.primero = new Empleado();
+        this.pasajeros = new ArrayList<Empleado>();
+        this.primero = null;
     }
 
     public int getDisponibleParado(){
@@ -58,11 +59,11 @@ public class Micro {
     }
 
     public void addPasajeroSentado(Empleado pasajero){
-        this.pasajerosSentados.add(pasajero);
+        this.getPasajeros().add(pasajero);
         this.setDisponibleSentado(this.getDisponibleSentado()-1);
     }
     public void addPasajeroParado(Empleado pasajero){
-        this.pasajerosParados.add(pasajero);
+        this.getPasajeros().add(pasajero);
         this.setDisponibleParado(this.getDisponibleParado()-1);
     }
     public boolean addPasajero(Empleado pasajero){
@@ -81,65 +82,46 @@ public class Micro {
         this.setPrimero(null);
     }
 
-    public boolean subirPasajero(Apurado pasajero){
+    public boolean subirPasajero(Empleado pasajero){
         this.checkPrimero(pasajero);
-        if(this.addPasajero(pasajero)) return true;
-        this.vaciarPrimero();
-        return false;
-    }
-    public boolean subirPasajero(Claustrofobico pasajero){
-        this.checkPrimero(pasajero);
-        if(this.getVolumen()>120){
+        if(pasajero == Empleado.APURADO){
             if(this.addPasajero(pasajero)) return true;
-            return false;
+        }
+        else if(pasajero == Empleado.CLAUSTROFOBICO){
+            if(this.getVolumen()>120){
+                if(this.addPasajero(pasajero)) return true;
+            }
+        }
+        else if(pasajero == Empleado.FIACA){
+            if(!this.asientosOcupados()){
+                this.addPasajeroSentado(pasajero);
+                return true;
+            }
+        }
+        else if(pasajero == Empleado.MODERADO){
+            if(this.getLugaresLibres() >= pasajero.getLugaresRequeridos()){
+                this.addPasajero(pasajero);
+                return true;
+            }
+        }
+        else if(pasajero == Empleado.OBSECUENTE){
+            if(subirPasajero(pasajero.getTipoDeJefe())){
+                this.addPasajero(pasajero);
+                return true;
+            }
         }
         this.vaciarPrimero();
         return false;
     }
-    public boolean subirPasajero(Fiaca pasajero){
-        this.checkPrimero(pasajero);
-        if(!this.asientosOcupados()){
-            this.addPasajeroSentado(pasajero);
-            return true;
-        }
-        this.vaciarPrimero();
-        return false;
-    }
+
     public void checkPrimero(Empleado pasajero){
         if(this.getPasajeros().size() == 0){
             this.setPrimero(pasajero);
         }
     }
-    public boolean subirPasajero(Moderado pasajero){
-        this.checkPrimero(pasajero);
-        if(this.getLugaresLibres() >= pasajero.getCantLugaresLibres()){
-            this.addPasajero(pasajero);
-            return true;
-        }
-        this.vaciarPrimero();
-        return false;
-    }
-    public boolean subirPasajero(Jefe pasajero){
-        this.checkPrimero(pasajero);
-        if(this.addPasajero(pasajero)){
-            pasajero.setDecision(true);
-            return true;
-        }
-        pasajero.setDecision(false);
-        this.vaciarPrimero();
-        return false;
-    }
-    public boolean subirPasajero(Obsecuente pasajero){
-        if(pasajero.getJefe().getDecision() == true){
-            this.addPasajero(pasajero);
-            return true;
-        }
-        this.vaciarPrimero();
-        return false;
-    }
     public void bajarPasajero(Empleado pasajero){
         this.getPasajeros().remove(pasajero);
-        if(this.getPasajeros().size() == 0) this.setPrimero(null)
+        if(this.getPasajeros().size() == 0) this.setPrimero(null);
         else this.setPrimero(this.getPasajeros().get(0));
     }
     public Empleado getPrimero(){

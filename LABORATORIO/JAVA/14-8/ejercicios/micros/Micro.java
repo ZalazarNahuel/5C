@@ -1,3 +1,5 @@
+package micros;
+
 import java.util.ArrayList;
 
 public class Micro {
@@ -8,11 +10,10 @@ public class Micro {
     private Empleado primero;
 
     public Micro(int limParado, int limSentado, int volumenx){
-        this.limiteParados = limParado;
-        this.limiteSentados = limSentado;
+        this.disponibleParado = limParado;
+        this.disponibleSentado = limSentado;
         this.volumen = volumenx;
-        this.pasajerosParados = new ArrayList<Empleado>();
-        this.pasajerosSentados = new ArrayList<Empleado>();
+        this.pasajeros = new ArrayList<Empleado>();
         this.primero = new Empleado();
     }
 
@@ -58,11 +59,11 @@ public class Micro {
     }
 
     public void addPasajeroSentado(Empleado pasajero){
-        this.pasajerosSentados.add(pasajero);
+        this.getPasajeros().add(pasajero);
         this.setDisponibleSentado(this.getDisponibleSentado()-1);
     }
     public void addPasajeroParado(Empleado pasajero){
-        this.pasajerosParados.add(pasajero);
+        this.getPasajeros().add(pasajero);
         this.setDisponibleParado(this.getDisponibleParado()-1);
     }
     public boolean addPasajero(Empleado pasajero){
@@ -139,7 +140,7 @@ public class Micro {
     }
     public void bajarPasajero(Empleado pasajero){
         this.getPasajeros().remove(pasajero);
-        if(this.getPasajeros().size() == 0) this.setPrimero(null)
+        if(this.getPasajeros().size() == 0) this.setPrimero(null);
         else this.setPrimero(this.getPasajeros().get(0));
     }
     public Empleado getPrimero(){
