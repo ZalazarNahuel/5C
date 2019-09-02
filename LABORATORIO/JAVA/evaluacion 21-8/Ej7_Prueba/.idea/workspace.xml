@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdb58372-f7d0-4ec9-8ae3-e1b4ab8a1479" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ej7_Prueba/Ej7_Prueba.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ej7_Prueba/src/Editorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ej7_Prueba/src/Libreria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a4e7234-b6e5-485e-9540-8b46c9e5882c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Ej7_Prueba.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Editorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Libreria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejercicio7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ejercicio7/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Libreria.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="47" selection-end-column="1" />
+            <state relative-caret-position="612">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,24 +32,19 @@
         <entry file="file://$PROJECT_DIR$/src/Editorial.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="40" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
@@ -56,13 +52,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/Editorial.java" />
         <option value="$PROJECT_DIR$/src/Libreria.java" />
       </list>
     </option>
   </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/../Ej6y7_Prueba/Ej6y7_Prueba.iml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="682" />
-    <option name="height" value="727" />
+    <option name="x" value="26" />
+    <option name="y" value="71" />
+    <option name="width" value="1196" />
+    <option name="height" value="657" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -70,17 +76,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ejercicio7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ejercicio7" type="462c0819:PsiDirectoryNode" />
+              <item name="Ej7_Prueba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ej7_Prueba" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ejercicio7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ejercicio7" type="462c0819:PsiDirectoryNode" />
+              <item name="Ej7_Prueba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ej7_Prueba" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -88,15 +93,11 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ej7_Prueba" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ej6y7_Prueba" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,17 +116,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bdb58372-f7d0-4ec9-8ae3-e1b4ab8a1479" name="Default Changelist" comment="" />
-      <created>1566846867021</created>
+      <changelist id="6a4e7234-b6e5-485e-9540-8b46c9e5882c" name="Default Changelist" comment="" />
+      <created>1566990025458</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1566846867021</updated>
+      <updated>1566990025458</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="728" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -162,34 +162,24 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Libreria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="47" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Editorial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests.java">
+    <entry file="file://$PROJECT_DIR$/src/Libreria.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="612">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
