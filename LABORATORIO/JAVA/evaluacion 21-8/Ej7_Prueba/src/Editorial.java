@@ -1,5 +1,0 @@
-public class enum Editorial {
-
-    KAPELUSZ,SUDAMERICANA,ATLANTIDA,ELATENEO,INTERZONA,SUR,ALIANZA;
-
-}
